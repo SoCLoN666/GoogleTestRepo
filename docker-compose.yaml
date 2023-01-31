@@ -1,0 +1,9 @@
+version: "3.0"
+services:
+  e2e-tests:
+    build: .
+    image: testapp:tag
+    volumes:
+      - ./:/home/node/app
+      - /home/node/app/node_modules
+    command: npm test

@@ -2,5 +2,11 @@
   "devDependencies": {
     "@playwright/test": "^1.30.0"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "npx playwright test",
+    "test-docker": "docker-compose up",
+    "generate": "sh ./e2e/scripts/run-only-chrome.sh",
+    "test-docker-chromium-build": "docker compose -f docker-compose.chromium.yml up --build",
+    "test-docker-chromium-run": "docker compose -f docker-compose.chromium.yml up && sh ./e2e/scripts/cleanup.sh"
+  }
 }
