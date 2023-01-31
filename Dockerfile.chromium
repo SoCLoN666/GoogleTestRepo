@@ -8,10 +8,8 @@ RUN npm install
 COPY . .
 RUN npx playwright install 
 
-RUN chmod +x ./e2e/scripts/run-tests.sh
-RUN sh ./e2e/scripts/prepare-in-container.sh
+RUN chmod +x ./e2e/scripts/remove-browsers-in-config.sh
+RUN sh ./e2e/scripts/remove-browsers-in-config.sh
 
 RUN chmod +x ./e2e/scripts/run-tests.sh
 ENTRYPOINT ["./e2e/scripts/run-tests.sh"]
-
-# CMD ["npm", "test"]

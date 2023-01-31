@@ -22,18 +22,9 @@ test.describe("main page functionality", () => {
   test("verify i'm lucky button works", async ({ page }) => {
     const imLuckyBtn = page.locator(MainPageIds.ImLuckyBtn);
 
+    await imLuckyBtn.waitFor({ state: "visible" });
     await imLuckyBtn.click();
 
     expect(page.url()).toBe("https://www.google.com/doodles");
   });
 });
-
-// test("get started link", async ({ page }) => {
-//   await page.goto("https://playwright.dev/");
-
-//   // Click the get started link.
-//   await page.getByRole("link", { name: "Get started" }).click();
-
-//   // Expects the URL to contain intro.
-//   await expect(page).toHaveURL(/.*intro/);
-// });

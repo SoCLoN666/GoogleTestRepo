@@ -10,5 +10,3 @@ RUN npx playwright install
 
 RUN chmod +x ./e2e/scripts/run-tests.sh
 ENTRYPOINT ["./e2e/scripts/run-tests.sh"]
-
-# CMD ["npm", "test"]

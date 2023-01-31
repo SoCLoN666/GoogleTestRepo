@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash\
 
 IFS='%'
 
@@ -22,6 +22,7 @@ updateDockerComposeYml() {
         
     else 
         echo "$FILE does not exist."
+        echo "creation of $FILE ..."
 
         touch docker-compose.chromium.yml
 
