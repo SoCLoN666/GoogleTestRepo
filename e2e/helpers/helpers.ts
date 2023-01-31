@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
 
-export function removeDuplicatedElements(page: Page) {
-  page.locator('[class="RNmpXc"] >> nth=0').evaluate((e) => e.remove());
+export async function removeDuplicatedElements(page: Page) {
+  await page.locator('[class="RNmpXc"] >> nth=0').evaluate((e) => e.remove());
 }

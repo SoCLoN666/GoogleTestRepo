@@ -21,7 +21,7 @@ test.describe("main page functionality", () => {
   });
 
   test("verify i'm lucky button works", async ({ page }) => {
-    removeDuplicatedElements(page);
+    await removeDuplicatedElements(page);
     const imLuckyBtn = page.locator(MainPageIds.ImLuckyBtn);
 
     await imLuckyBtn.waitFor({ state: "visible" });
