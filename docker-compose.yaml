@@ -2,7 +2,7 @@ version: "3.0"
 services:
   e2e-tests:
     build: .
-    image: testapp:tag
+    image: google-test-app:tag
     volumes:
       - ./:/home/node/app
       - /home/node/app/node_modules

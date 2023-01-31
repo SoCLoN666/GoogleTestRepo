@@ -5,6 +5,6 @@
   "scripts": {
     "test": "npx playwright test",
     "test-docker": "docker-compose up",
-    "test-docker-chromium-run": "sh ./e2e/scripts/generate-new-compose.sh && docker compose -f docker-compose.chromium.yml up && sh ./e2e/scripts/cleanup.sh"
+    "test-docker-chromium": "sh ./e2e/scripts/generate-docker-files.sh && docker compose -f docker-compose.chromium.yml up && sh ./e2e/scripts/cleanup.sh"
   }
 }
