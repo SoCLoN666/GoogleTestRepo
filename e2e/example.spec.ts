@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { appUrl } from "./environment";
+import { removeDuplicatedElements } from "./helpers/helpers";
 import { MainPageIds } from "./selectors/main-page";
 
 test.describe("main page functionality", () => {
@@ -20,6 +21,7 @@ test.describe("main page functionality", () => {
   });
 
   test("verify i'm lucky button works", async ({ page }) => {
+    removeDuplicatedElements(page);
     const imLuckyBtn = page.locator(MainPageIds.ImLuckyBtn);
 
     await imLuckyBtn.waitFor({ state: "visible" });
