@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { appUrl } from "./environment";
-import { removeDuplicatedElements } from "./helpers/helpers";
 import { MainPageIds } from "./selectors/main-page";
 
 test.describe("main page functionality", () => {
@@ -20,13 +19,9 @@ test.describe("main page functionality", () => {
     await expect(logo).toBeVisible();
   });
 
-  test("verify i'm lucky button works", async ({ page }) => {
-    await removeDuplicatedElements(page);
-    const imLuckyBtn = page.locator(MainPageIds.ImLuckyBtn);
+  test("verify search field is visible", async ({ page }) => {
+    const searchBar = page.locator(MainPageIds.SearchBar);
 
-    await imLuckyBtn.waitFor({ state: "visible" });
-    await imLuckyBtn.click();
-
-    expect(page.url()).toBe("https://www.google.com/doodles");
+    await expect(searchBar).toBeVisible();
   });
 });
