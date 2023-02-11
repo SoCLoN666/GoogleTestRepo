@@ -1,10 +1,11 @@
 pipeline {
-  agent {
-        docker { image 'node:16.13.1-alpine' }
-    }
+  agent any
   
   stages {
     stage('Test') {
+      agent {
+        docker { image 'node:16.13.1-alpine' }
+      }
       steps {
         echo "start tests..."
         sh 'npm test'
