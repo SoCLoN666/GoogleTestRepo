@@ -7,10 +7,6 @@ pipeline {
     stage('Test') {
       steps {
         echo "start tests..."
-        sh "sudo su -"
-        sh "usermod -a -G sudo jenkins"
-        sh "sudo groupadd docker"
-        sh "sudo usermod -aG docker $USER"
         sh "docker ps"
         sh "npm test"
         echo "tests finished..."
