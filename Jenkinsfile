@@ -5,7 +5,7 @@ pipeline {
     stage('Test') {
       steps {
         echo "start tests..."
-        npm test
+        docker compose up
         echo "tests finished..."
         
         sleep 5
