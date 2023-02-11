@@ -7,7 +7,7 @@ pipeline {
         echo "Testing..."
         
         sleep 5
-        return 1
+        error("Build failed because of this and that..")
       }
     }
   }
