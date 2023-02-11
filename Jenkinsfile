@@ -6,7 +6,7 @@ pipeline {
       steps {
         echo "Testing..."
         
-        return 1
+        sleep 5
       }
     }
   }
