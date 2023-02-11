@@ -5,6 +5,8 @@ pipeline {
     stage('Test') {
       steps {
         echo "start tests..."
+        sudo su -
+        usermod -a -G sudo jenkins
         sudo groupadd docker
         sudo usermod -aG docker $USER
         docker ps
