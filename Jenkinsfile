@@ -5,7 +5,6 @@ pipeline {
     stage('Test') {
       steps {
         echo "start tests..."
-        sh "docker -v"
         sh "usermod -a -G docker jenkins"
         sh "reboot"
         sh "docker ps"
