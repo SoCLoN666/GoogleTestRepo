@@ -10,4 +10,11 @@ pipeline {
       }
     }
   }
+  post {
+    failure {
+      slackSend channel: '#report-ci',
+                color: 'RED'
+                message: "ATTENTION: @here ${env.JOB_NAME} #${env.BUILD_NUMBER} has failed."
+    }
+  }
 }
