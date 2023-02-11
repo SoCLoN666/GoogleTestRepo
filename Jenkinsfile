@@ -11,10 +11,10 @@ pipeline {
     }
   }
   post {
-    failure {
-      slackSend channel: '#report-ci',
-                color: 'RED'
-                message: "ATTENTION: @here ${env.JOB_NAME} #${env.BUILD_NUMBER} has failed."
+    success {
+        slackSend channel: '#report-ci',
+                  color: 'good',
+                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
     }
   }
 }
