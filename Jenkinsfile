@@ -5,7 +5,7 @@ pipeline {
     stage('Test') {
       steps {
         echo "start tests..."
-        sh ./e2e/scripts/run-tests.sh
+        npm test
         echo "tests finished..."
         
         sleep 5
