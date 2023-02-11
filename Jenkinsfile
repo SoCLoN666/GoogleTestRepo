@@ -4,7 +4,9 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        echo "Testing..."
+        echo "start tests..."
+        sh ./e2e/scripts/run-tests.sh
+        echo "tests finished..."
         
         sleep 5
         error("Build failed because of this and that..")
