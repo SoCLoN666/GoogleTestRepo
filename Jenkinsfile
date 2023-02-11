@@ -19,7 +19,7 @@ pipeline {
     }
     failure {
         slackSend channel: '#report-ci',
-                  color: 'RED',
+                  color: 'danger',
                   message: "Attention ${env.JOB_NAME} #${env.BUILD_NUMBER} has failed."
     }
   }
