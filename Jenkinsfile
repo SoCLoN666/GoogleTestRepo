@@ -1,12 +1,11 @@
 pipeline {
-  agent {
+  stages {
+    agent {
         docker { 
             image 'node:16-alpine' 
             args  '--net="jenkins"'
         }
     }
-  
-  stages {
     stage('Test') {
       steps {
         sh "npm -version"
@@ -17,17 +16,17 @@ pipeline {
       }
     }
   }
-  post {
-    success {
-        slackSend channel: '#report-ci',
-                  color: 'good',
-                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
-    }
-    failure {
-        slackSend channel: '#report-ci',
-                  color: 'danger',
-                  message: "Attention ${currentBuild.fullDisplayName} has failed."
-    }
-  }
+//   post {
+//     success {
+//         slackSend channel: '#report-ci',
+//                   color: 'good',
+//                   message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+//     }
+//     failure {
+//         slackSend channel: '#report-ci',
+//                   color: 'danger',
+//                   message: "Attention ${currentBuild.fullDisplayName} has failed."
+//     }
+//   }
 }
 
