@@ -9,6 +9,7 @@ pipeline {
       }
       steps {
         sh "npm -version"
+        sh "npm install"
         sh "npx playwright install"
         sh "npx playwright test"
         echo "tests finished..."
