@@ -4,7 +4,7 @@ pipeline {
     stage('Test') {
       agent {
         docker { 
-            image 'node:16-alpine' 
+            image 'mcr.microsoft.com/playwright:v1.30.0-focal' 
         }
       }
       steps {
