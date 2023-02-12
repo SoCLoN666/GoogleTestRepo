@@ -1,7 +1,7 @@
 pipeline {
   agent {
         docker { 
-            image 'node:16.13.1-alpine' 
+            image 'node:16-alpine' 
             args  '--net="jenkins"'
         }
     }
@@ -9,8 +9,8 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        echo "start tests..."
-        sh "docker -v"
+        sh "npm -version"
+        sh "npm test"
         echo "tests finished..."
         
         sleep 5
