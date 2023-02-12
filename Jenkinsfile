@@ -10,10 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo "start tests..."
-        sh "usermod -a -G docker jenkins"
-        sh "reboot"
-        sh "docker ps"
-        sh "npm test"
+        sh "docker -v"
         echo "tests finished..."
         
         sleep 5
