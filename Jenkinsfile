@@ -18,17 +18,17 @@ pipeline {
       }
     }
   }
-//   post {
-//     success {
-//         slackSend channel: '#report-ci',
-//                   color: 'good',
-//                   message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
-//     }
-//     failure {
-//         slackSend channel: '#report-ci',
-//                   color: 'danger',
-//                   message: "Attention ${currentBuild.fullDisplayName} has failed."
-//     }
-//   }
+  post {
+    success {
+        slackSend channel: '#report-ci',
+                  color: 'good',
+                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+    }
+    failure {
+        slackSend channel: '#report-ci',
+                  color: 'danger',
+                  message: "Attention ${currentBuild.fullDisplayName} has failed."
+    }
+  }
 }
 
