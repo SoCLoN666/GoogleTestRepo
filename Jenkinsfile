@@ -1,12 +1,13 @@
 pipeline {
+  agent any
   stages {
-    agent {
+    stage('Test') {
+      agent {
         docker { 
             image 'node:16-alpine' 
             args  '--net="jenkins"'
         }
-    }
-    stage('Test') {
+      }
       steps {
         sh "npm -version"
         sh "npm test"
